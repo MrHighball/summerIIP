@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Fibonacci Sequence</title> 
+   <script>
+       "use strict";
+
+       let fibArray = [];
+       let n; // use this as the index or counter in your for loops
+       let fibNum;
+
+       while (true) {
+           fibNum = prompt("How many numbers in the sequence?");
+           fibNum = parseFloat(fibNum);
+           if (fibNum >= 3) {
+               break;
+           } else {
+               alert("The sequence must have 3 or more numbers.");
+           }
+       }
+
+       // declare the array
+       fibArray[0] = 0;
+       fibArray[1] = 1;
+
+       // fill the array - complete this for loop
+       for (n = 2; n < fibNum; n++) {
+           fibArray[n] = fibArray[n-1] + fibArray[n-2];
+       }
+
+       // write out the results - complete this for loop
+       for (n = 0; n < fibArray.length; n++) {
+           document.write(fibArray[n] + "<br>");
+       }
+
+       // calculate the ratio = last number / second to last number
+       let ratio = fibArray[fibNum-1] / fibArray[fibNum-2];
+       document.write("Ratio: " + ratio);
+   </script>
+</head> 
+<body>
+	<h2>BenjaminDudra - IT 2320 - Lab 1</h2>
+	why did this come out at the bottom?
+ </body> 
+</html>
