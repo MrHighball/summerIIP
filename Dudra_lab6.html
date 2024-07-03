@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <style>
+		div {font-size: 24px;}
+		span {color: red;}
+    </style>
+    <script>
+        "use strict"
+		let arr = ["dog", "cat", 10, 20, "horse"];
+		
+		// remove the first element of the array
+		arr.shift();
+		
+		// insert "fish" at the beginning of the array
+		arr.unshift("fish");
+		
+		// insert the number 111 at the beginning of the array
+		arr.unshift(111);
+		
+		// remove the last element of the array
+		arr.pop();
+		
+		// append the number 999 to the end of the array
+		arr.push(999);
+		
+		// sort the array
+		arr.sort();
+		
+		// reverse the order of the sorted array
+		arr.reverse();
+		
+		/* add a line to the onload function to call the function display() 
+		   when the button is clicked (id is "button")
+		*/
+		window.onload = function() {
+			document.getElementById("button").onclick = display;
+		};
+		
+		/* write a function that displays the final array in the span element with id = "arr"
+		   find the index of the word "cat" in the final array 
+		   and display it in the span element with id = "cat"
+		 */
+		function display() {
+			document.getElementById("arr").innerText = arr.join(", ");
+			let catIndex = arr.indexOf("cat");
+			document.getElementById("cat").innerText = catIndex;
+		}
+    </script>
+    <title>IT 2320 Lab 6</title>
+</head>
+<body>
+    <h1>Dudra - IT 2320 - Lab 6</h1>
+	<div>
+		<strong>Contents of the array:</strong> <span id="arr"></span><br /><br />
+		<strong>Index of the string "cat":</strong> <span id="cat"></span><br /><br />
+		<button id="button">Submit</button>
+	</div>
+</body>
+</html>
