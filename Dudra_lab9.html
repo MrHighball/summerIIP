@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	   canvas { border:1px solid #c3c3c3; }
+	</style>
+	<title>Lab 9 - Canvas</title>
+</head>  
+<body>
+	<h2>Benjamin Dudra - IT 2320 - Lab 9</h2>
+	<canvas id="myCanvas" width="800" height="600">
+		 Your browser does not support the canvas element.
+	</canvas>
+</body>
+<script>
+	let canvas = document.getElementById("myCanvas");
+	let ctx = canvas.getContext("2d");
+
+	// black square in the top left corner
+	ctx.fillStyle = "#000000";
+	ctx.fillRect(0, 0, 100, 100);
+
+	// red square in the top right corner
+	ctx.fillStyle = "#FF0000";
+	ctx.fillRect(700, 0, 100, 100);
+
+	// green square in the bottom left corner
+	ctx.fillStyle = "#00FF00";
+	ctx.fillRect(0, 500, 100, 100);
+
+	//  blue square in the bottom right corner
+	ctx.fillStyle = "#0000FF";
+	ctx.fillRect(700, 500, 100, 100);
+
+	// black circle in the top left corner
+	ctx.beginPath();
+	ctx.arc(50, 50, 50, 0, Math.PI * 2, true); // Outer circle
+	ctx.fillStyle = "#000000";
+	ctx.fill();
+
+	// red circle in the top right corner
+	ctx.beginPath();
+	ctx.arc(750, 50, 50, 0, Math.PI * 2, true); // Outer circle
+	ctx.fillStyle = "#FF0000";
+	ctx.fill();
+
+	//  green circle in the bottom left corner
+	ctx.beginPath();
+	ctx.arc(50, 550, 50, 0, Math.PI * 2, true); // Outer circle
+	ctx.fillStyle = "#00FF00";
+	ctx.fill();
+
+	// blue circle in the bottom right corner
+	ctx.beginPath();
+	ctx.arc(750, 550, 50, 0, Math.PI * 2, true); // Outer circle
+	ctx.fillStyle = "#0000FF";
+	ctx.fill();
+
+	// text in the center
+	ctx.font = "30px Arial";
+	ctx.fillStyle = "#888888";
+	ctx.fillText("Lab 9", 375, 300);
+
+</script>
+</html>
