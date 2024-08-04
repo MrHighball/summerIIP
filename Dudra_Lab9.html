@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Shapes</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="800" height="600"></canvas>
+    <script>
+        // Get the canvas element and context
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Rectangle class
+        class Rectangle {
+            constructor(x, y, ht, wd, color, filled) {
+                this.x = x;
+                this.y = y;
+                this.ht = ht;
+                this.wd = wd;
+                this.color = color;
+                this.filled = filled;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.rect(this.x, this.y, this.wd, this.ht);
+                if (this.filled) {
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                } else {
+                    ctx.strokeStyle = this.color;
+                    ctx.stroke();
+                }
+            }
+        }
+
+        // Circle class
+        class Circle {
+            constructor(x, y, radius, color, filled) {
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+                this.color = color;
+                this.filled = filled;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+                if (this.filled) {
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                } else {
+                    ctx.strokeStyle = this.color;
+                    ctx.stroke();
+                }
+            }
+        }
+
+        // Create and draw a red filled circle
+        const redFilledCircle = new Circle(100, 100, 50, 'red', true);
+        redFilledCircle.draw();
+
+        // Create and draw a black circle outline
+        const blackCircleOutline = new Circle(250, 100, 50, 'black', false);
+        blackCircleOutline.draw();
+
+        // Create and draw a green filled rectangle
+        const greenFilledRectangle = new Rectangle(100, 200, 100, 150, 'green', true);
+        greenFilledRectangle.draw();
+
+        // Create and draw a blue rectangle outline
+        const blueRectangleOutline = new Rectangle(300, 200, 100, 150, 'blue', false);
+        for (let i = 0; i < 10; i++) {
+            blueRectangleOutline.x += 10;
+            blueRectangleOutline.y += 10;
+            blueRectangleOutline.draw();
+        }
+    </script>
+</body>
+</html>
